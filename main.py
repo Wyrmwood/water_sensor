@@ -26,7 +26,7 @@ def set_thresholds():
         except (FileNotFoundError, json.decoder.JSONDecodeError):
             print("Thresholds not set")
 
-    if all(_ in THRESHOLDS for _ in ("high", "low")):
+    if all(_ in THRESHOLDS for _ in ("high", "low", "med")):
         return
 
     input("Press enter when the water sensor is connected and not in water")
