@@ -37,6 +37,9 @@ def set_thresholds():
     # set the medium threshold
     THRESHOLDS["med"] = (THRESHOLDS["high"] - THRESHOLDS["low"]) / 2
 
+    with open("thresholds.json", "w") as f:
+        json.dump(THRESHOLDS, f, indent=2)
+
 
 def main():
     # test the light
