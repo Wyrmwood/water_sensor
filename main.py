@@ -4,7 +4,7 @@ Read water level from a water level sensor and turn on or off a light, depending
 import json
 import time
 
-import RPi.IO as GPIO
+import RPi.GPIO as GPIO
 
 THRESHOLDS = {}
 LIGHT_CHANNEL = 17
