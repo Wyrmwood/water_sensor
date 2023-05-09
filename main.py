@@ -43,8 +43,7 @@ def set_thresholds():
         json.dump(THRESHOLDS, f, indent=2)
 
 
-def main():
-    # test the light
+def test_light():
     for state in "on", "off":
         new_state = GPIO.HIGH if state == "on" else GPIO.LOW
         GPIO.output(LIGHT_CHANNEL, new_state)
@@ -52,6 +51,8 @@ def main():
         if light_input.lower().strip() != "y":
             raise SystemExit("Check light sensor connections")
 
+       
+def main():
     while True:
         reading = GPIO.input(SENSOR_CHANNEL)
         new_state = GPIO.HIGH if reading >= THRESHOLDS["med"] else GPIO.LOW
@@ -62,6 +63,7 @@ def main():
 
 # Press the green button in the gutter to run the script.
 if __name__ == "__main__":
+    test_light()
     set_thresholds()
     main()
 
