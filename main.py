@@ -10,6 +10,8 @@ THRESHOLDS = {}
 LIGHT_CHANNEL = 17
 SENSOR_CHANNEL = 26
 GPIO.setmode(GPIO.BOARD)
+GPIO.setup(LIGHT_CHANNEL, GPIO.OUT)
+GPIO.setup(SENSOR_CHANNEL, GPIO.IN)
 
 def wait(seconds=10):
     for second in range(seconds, 0, -1):
