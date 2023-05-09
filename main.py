@@ -55,7 +55,9 @@ def test_light():
 def main():
     while True:
         reading = GPIO.input(SENSOR_CHANNEL)
+        print(f"Sensor reads {reading}"
         new_state = GPIO.HIGH if reading >= THRESHOLDS["med"] else GPIO.LOW
+        printf(f"Setting light to {new_state}")
         GPIO.output(LIGHT_CHANNEL, new_state)
         wait()
         print("Press CTRL+C to quit")
