@@ -9,7 +9,7 @@ import RPi.GPIO as GPIO
 THRESHOLDS = {}
 LIGHT_CHANNEL = 17
 SENSOR_CHANNEL = 26
-
+GPIO.setmode(GPIO.BOARD)
 
 def wait(seconds=10):
     for second in range(seconds, 0, -1):
